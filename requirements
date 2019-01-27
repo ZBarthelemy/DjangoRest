@@ -1,0 +1,7 @@
+djangorestframework==3.9.0
+django
+coreapi
+markdown
+django-filter
+django-crispy-forms
+django-guardian
