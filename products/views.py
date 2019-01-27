@@ -1,7 +1,7 @@
 
-from snippets.models import Snippet
-from snippets.permissions import IsOwnerOrReadOnly
-from snippets.serializers import SnippetSerializer, UserSerializer
+from products.models import Product
+from products.permissions import IsOwnerOrReadOnly
+from products.serializers import ProductSerializer, UserSerializer
 from django.contrib.auth.models import User
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, action
@@ -19,7 +19,7 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = UserSerializer
 
 
-class SnippetViewSet(viewsets.ModelViewSet):
+class ProductViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
@@ -27,8 +27,8 @@ class SnippetViewSet(viewsets.ModelViewSet):
     Additionally we also provide an extra `highlight` action.
     """
     # noinspection PyUnresolvedReferences
-    queryset = Snippet.objects.all()
-    serializer_class = SnippetSerializer
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
 
@@ -47,6 +47,6 @@ class SnippetViewSet(viewsets.ModelViewSet):
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
-        'snippets': reverse('snippet-list', request=request, format=format)
+        'products': reverse('snippet-list', request=request, format=format)
     })
 
