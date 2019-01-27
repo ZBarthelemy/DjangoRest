@@ -7,6 +7,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, action
 from rest_framework.reverse import reverse
 from rest_framework import generics, permissions, renderers, viewsets
+from rest_framework_swagger.views import get_swagger_view
+schema_view = get_swagger_view(title='Dummy API')
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):

@@ -5,3 +5,4 @@ markdown
 django-filter
 django-crispy-forms
 django-guardian
+django-rest-swagger==2.2.0
