@@ -29,19 +29,5 @@ class Product(models.Model):
     #                                                  serialize=False,
     #                                                  verbose_name='ShippingId')
 
-    # def save(self, *args, **kwargs):
-    #     """
-    #     Use the `pygments` library to create a highlighted HTML
-    #     representation of the code snippet.
-    #     This is what you will view on the swagger for API rendering.
-    #     """
-    #     lexer = get_lexer_by_name(self.product_type)
-    #     linenos = 'table' if self.linenos else False
-    #     options = {'name': self.name} if self.name else {}
-    #     formatter = HtmlFormatter(style=self.style, linenos=linenos,
-    #                               full=True, **options)
-    #     self.highlighted = highlight(self.name, lexer, formatter)
-    #     super(Product, self).save(*args, **kwargs)
-
     class Meta:
         ordering = ('created',)
